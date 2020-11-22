@@ -48,6 +48,7 @@ public class PlayerSensor : MonoBehaviour
              * i will determine how far ray casted from origin bottom left
              */
             Vector2 start = raycastOrigin.bottomLeft + new Vector2(1 * verticalRaySpacing * i, 0);
+            //we set the ray will go downwards
             Vector2 destination = Vector2.down * 2;
             Debug.DrawRay(start, destination, Color.green);
         }
@@ -59,10 +60,12 @@ public class PlayerSensor : MonoBehaviour
              * We also do subtraction because we want to re-position downwards
              */
             Vector2 startRight = raycastOrigin.topRight - (new Vector2(0, 1 * horizontalRaySpacing * i));
+            //set ray will go right
             Vector2 destinationRight = Vector2.right * 2;
             Debug.DrawRay(startRight, destinationRight, Color.green);
 
             Vector2 startLeft = raycastOrigin.topLeft - (new Vector2(0, 1 * horizontalRaySpacing * i));
+            //set ray will go left
             Vector2 destinationLeft = Vector2.right * -2;
             Debug.DrawRay(startLeft, destinationLeft, Color.green);
         }
